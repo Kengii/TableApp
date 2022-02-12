@@ -37,9 +37,9 @@ class SecondTVC: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell1", for: indexPath)
-        let email = DataPerson.email[indexPath.row]
-        let phone = DataPerson.numberPhone[indexPath.row]
-        cell.textLabel?.text = "\(email) \(phone)"
+        let email = DataPerson.email[indexPath.section]
+        let phone = DataPerson.numberPhone[indexPath.section]
+        cell.textLabel?.text = indexPath.row == 0 ? email : phone
         return cell
     }
 
